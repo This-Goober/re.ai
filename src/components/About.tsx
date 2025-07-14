@@ -73,6 +73,16 @@ const About: React.FC = () => {
       title: 'Making Music Together'
     },
     {
+      src: '/images/carousel/eidee_bruch_2nd_mov_lutheran_church.jpeg',
+      alt: 'Enjoying the Cambridge Experience',
+      title: 'Punting at Cambridge'
+    },
+    {
+      src: '/images/carousel/eidee_kcms_recital_2025.jpeg',
+      alt: 'Invitation to Perform at King College',
+      title: 'Invitation from KCMS'
+    },
+    {
       src: '/images/carousel/eidee_martin_trust_center_mit.jpeg',
       alt: 'Passion for Entrepreneurship and Innovation',
       title: 'Visiting the Martin Trust Center in MIT'
@@ -86,16 +96,6 @@ const About: React.FC = () => {
       src: '/images/carousel/eidee_cambridge_punting.jpeg',
       alt: 'Enjoying the Cambridge Experience',
       title: 'Punting at Cambridge'
-    },
-    {
-      src: '/images/carousel/eidee_bruch_2nd_mov_lutheran_church.jpeg',
-      alt: 'Enjoying the Cambridge Experience',
-      title: 'Punting at Cambridge'
-    },
-    {
-      src: '/images/carousel/eidee_kcms_recital_2025.jpeg',
-      alt: 'Invitation to Perform at King College',
-      title: 'Invitation from KCMS'
     }
   ];
 
