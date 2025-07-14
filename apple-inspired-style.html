@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple-Inspired Minimalist Design</title>
+  
+  <!-- Import Inter font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #111;
+      background-color: #fff;
+      line-height: 1.6;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Page Typography */
+    .page-title {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #111;
+    }
+    
+    .page-subtitle {
+      font-size: 24px;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 40px;
+      max-width: 800px;
+    }
+    
+    .page-content {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #111;
+      margin-bottom: 60px;
+      max-width: 800px;
+    }
+    
+    /* Card Styles */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .card-header {
+      margin-bottom: 16px;
+    }
+    
+    .card-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    
+    .card-subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    
+    .card-content {
+      font-size: 14px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.5;
+    }
+    
+    /* Spacing and Layout */
+    .section {
+      margin-bottom: 80px;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    /* Button Styles (Optional) */
+    .btn {
+      display: inline-block;
+      background-color: #111;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      margin-top: 20px;
+    }
+    
+    .btn:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="section">
+      <h1 class="page-title">Minimalist Design System</h1>
+      <p class="page-subtitle">A clean, Apple-inspired typography and layout system using Inter font for modern web applications.</p>
+    </header>
+    
+    <section class="section">
+      <p class="page-content">
+        This design system focuses on typography, white space, and subtle depth to create a clean, 
+        professional aesthetic. Inspired by Apple's design language, it uses the Inter font family 
+        with carefully selected font sizes, weights, and spacing to establish a clear visual hierarchy. 
+        The color palette is minimal, relying on shades of black and white with subtle shadows to create depth.
+      </p>
+      
+      <div class="card-container">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Typography System</h2>
+            <p class="card-subtitle">Carefully crafted font sizes and weights</p>
+          </div>
+          <div class="card-content">
+            <p>
+              Our typography system uses Inter with three distinct levels for both page and card elements.
+              Page typography includes large, bold titles (56px), medium subtitles (24px), and comfortable
+              reading content (18px). Card typography is more compact with 22px titles, 15px subtitles, and
+              14px content text.
+            </p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Spacing & Layout</h2>
+            <p class="card-subtitle">Generous white space for clarity</p>
+          </div>
+          <div class="card-content">
+            <p>
+              Proper spacing is essential for readability and visual appeal. Our system uses generous
+              margins between sections (80px), comfortable padding within cards (30px), and appropriate
+              spacing between text elements. Cards use subtle shadows and hover effects to create a sense
+              of depth and interactivity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section">
+      <a href="#" class="btn">Explore More</a>
+    </section>
+  </div>
+</body>
+</html>

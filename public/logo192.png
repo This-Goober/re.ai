@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!-- Background circle -->
+  <circle cx="96" cy="96" r="96" fill="#000000"/>
+  
+  <!-- Main "ré" text -->
+  <text x="96" y="82" font-family="Inter, sans-serif" font-size="30" font-weight="300" fill="#ffffff" text-anchor="middle" letter-spacing="-0.02em">ré</text>
+  
+  <!-- AI text -->
+  <text x="96" y="110" font-family="Inter, sans-serif" font-size="17" font-weight="400" fill="#ffffff" text-anchor="middle" letter-spacing="0.05em">.ai</text>
+  
+  <!-- Subtle sound wave elements -->
+  <path d="M 58 96 Q 67 86 77 96 Q 87 106 96 96 Q 106 86 115 96 Q 125 106 134 96" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M 62 96 Q 72 82 82 96 Q 91 110 101 96 Q 110 82 120 96 Q 130 110 140 96" stroke="#ffffff" stroke-width="0.5" fill="none" opacity="0.2"/>
+</svg> 
