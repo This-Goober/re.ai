@@ -17,6 +17,13 @@ body {
   line-height: 1.6;
 }
 
+/* Ensure list items inherit proper font styling */
+ul, ol, li {
+  font-family: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
 /* Page Typography */
 .page-title {
   font-size: 56px;
@@ -425,4 +432,76 @@ p {
 .nav-link.active {
   color: #111;
   font-weight: 600;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 36px;
+    letter-spacing: -0.015em;
+  }
+
+  .page-subtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  /* Mobile button container styles */
+  .card-content div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  /* Mobile button styles */
+  .btn {
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Specific overrides for flex buttons */
+  .btn[style*="flex: 1 1 auto"] {
+    flex: none !important;
+  }
+
+  /* Dark section button responsiveness */
+  section[style*="background-color: #1a1a1a"] div[style*="display: flex"] {
+    flex-direction: column !important;
+    max-width: 300px !important;
+    gap: 16px !important;
+  }
+
+  section[style*="background-color: #1a1a1a"] .btn {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 28px;
+  }
+
+  .page-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .card {
+    margin: 0 8px;
+  }
+
+  .btn {
+    padding: 16px 24px !important;
+    font-size: 15px !important;
+  }
 }

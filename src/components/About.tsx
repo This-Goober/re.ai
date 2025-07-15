@@ -221,7 +221,7 @@ const About: React.FC = () => {
                    ]}
                    autoSlide={false}
                    showDots={true}
-                   showArrows={false}
+                   showArrows={true}
                  />
                </div>
                
@@ -274,7 +274,7 @@ const About: React.FC = () => {
                    ]}
                    autoSlide={false}
                    showDots={true}
-                   showArrows={false}
+                   showArrows={true}
                  />
                </div>
                
@@ -327,7 +327,7 @@ const About: React.FC = () => {
                    ]}
                    autoSlide={false}
                    showDots={true}
-                   showArrows={false}
+                   showArrows={true}
                  />
                </div>
                
@@ -380,7 +380,7 @@ const About: React.FC = () => {
                    ]}
                    autoSlide={false}
                    showDots={true}
-                   showArrows={false}
+                   showArrows={true}
                  />
                </div>
                
@@ -433,7 +433,7 @@ const About: React.FC = () => {
                    ]}
                    autoSlide={false}
                    showDots={true}
-                   showArrows={false}
+                   showArrows={true}
                  />
                </div>
                
@@ -476,7 +476,7 @@ const About: React.FC = () => {
                    ]}
                    autoSlide={false}
                    showDots={true}
-                   showArrows={false}
+                   showArrows={true}
                  />
                </div>
                
