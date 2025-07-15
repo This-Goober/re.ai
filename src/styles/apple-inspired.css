@@ -267,7 +267,7 @@ ul, ol, li {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 30px;
+  padding: 16px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -303,7 +303,7 @@ ul, ol, li {
 }
 
 .card-content p {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .card-content .btn {
@@ -436,6 +436,18 @@ p {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card-content p {
+    margin-bottom: 14px;
+  }
+
   .page-title {
     font-size: 36px;
     letter-spacing: -0.015em;
@@ -493,11 +505,20 @@ p {
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 8px;
   }
 
   .card {
-    margin: 0 8px;
+    margin: 0 2px;
+    padding: 12px;
+  }
+
+  .card-content {
+    font-size: 13px;
+  }
+
+  .card-content p {
+    margin-bottom: 12px;
   }
 
   .btn {

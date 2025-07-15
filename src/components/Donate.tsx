@@ -11,159 +11,99 @@ const Donate: React.FC = () => {
   return (
     <div style={{ paddingTop: '80px' }}>
       {/* Hero Section */}
-      <section className="section">
+      <section style={{ padding: '40px 0 30px 0' }}>
         <div className="container">
           <div className="text-center mb-4">
-            <h1 className="page-title">Invest in the Future of AI Music Technology</h1>
+            <h1 className="page-title">Support AI Music for Everyone</h1>
             <p className="page-subtitle">
-              Your contribution directly fuels groundbreaking research and development in artificial intelligence for music, 
-              enabling us to build innovative tools that democratize music creation and enhance artistic expression worldwide.
+              I'm a 16-year-old violinist working to make AI music technology accessible to all musicians. 
+              Talent is everywhere, but access is not universal. Help me change that.
             </p>
           </div>
         </div>
       </section>
 
       {/* Donation Section */}
-      <section className="section">
+      <section style={{ padding: '20px 0 40px 0' }}>
         <div className="container">
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             <div className="card">
               <div className="card-header">
-                <h2 className="card-title">Support Cutting-Edge Research</h2>
+                <h2 className="card-title">Democratizing Music Technology</h2>
                 <p style={{ color: '#666', marginTop: '0.5rem' }}>
-                  Join our mission to advance AI music technology through strategic investment in research and development
+                  Help support the development of AI music tools that everyone can access, regardless of their background
                 </p>
               </div>
               
               <div className="card-content">
-                {/* Fund Allocation */}
+                {/* Mission */}
                 <div style={{ 
                   backgroundColor: '#f8f9fa', 
                   padding: '2rem', 
                   borderRadius: '12px', 
                   marginBottom: '2rem' 
                 }}>
-                  <h4 style={{ marginBottom: '1.5rem', color: '#1d1d1f', fontSize: '20px', fontWeight: '600' }}>How Your Investment Makes an Impact:</h4>
-                  
-                  <div style={{ display: 'grid', gap: '1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <div style={{ 
-                        minWidth: '32px', 
-                        height: '32px', 
-                        backgroundColor: '#007aff', 
-                        borderRadius: '50%', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center' 
-                      }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 2C13.1 2 14 2.9 14 4V6C14 7.1 13.1 8 12 8C10.9 8 10 7.1 10 6V4C10 2.9 10.9 2 12 2Z" fill="white"/>
-                          <rect x="4" y="8" width="16" height="8" rx="2" stroke="white" strokeWidth="1.5" fill="none"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <h5 style={{ margin: '0 0 0.5rem 0', color: '#1d1d1f', fontSize: '16px', fontWeight: '600' }}>
-                          Research & Development (60%)
-                        </h5>
-                        <p style={{ margin: 0, color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
-                          Funding advanced AI model development, machine learning research, audio processing algorithms, 
-                          and innovative music technology solutions.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <div style={{ 
-                        minWidth: '32px', 
-                        height: '32px', 
-                        backgroundColor: '#007aff', 
-                        borderRadius: '50%', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center' 
-                      }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                          <path d="M16 21V19C16 17.9 15.1 17 14 17H5C3.9 17 3 17.9 3 19V21" stroke="white" strokeWidth="1.5" fill="none"/>
-                          <circle cx="8.5" cy="7" r="4" stroke="white" strokeWidth="1.5" fill="none"/>
-                          <path d="M20 8V14" stroke="white" strokeWidth="1.5"/>
-                          <path d="M23 11H17" stroke="white" strokeWidth="1.5"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <h5 style={{ margin: '0 0 0.5rem 0', color: '#1d1d1f', fontSize: '16px', fontWeight: '600' }}>
-                          Technical Talent & Contractors (25%)
-                        </h5>
-                        <p style={{ margin: 0, color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
-                          Compensating skilled engineers, researchers, and specialized contractors who contribute 
-                          their expertise to advancing our AI music technology platform.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <div style={{ 
-                        minWidth: '32px', 
-                        height: '32px', 
-                        backgroundColor: '#007aff', 
-                        borderRadius: '50%', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center' 
-                      }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                          <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-                          <path d="M2 12H22" stroke="white" strokeWidth="1.5"/>
-                          <path d="M12 2A15.3 15.3 0 0 1 19.4 7" stroke="white" strokeWidth="1.5"/>
-                          <path d="M12 2A15.3 15.3 0 0 0 4.6 7" stroke="white" strokeWidth="1.5"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <h5 style={{ margin: '0 0 0.5rem 0', color: '#1d1d1f', fontSize: '16px', fontWeight: '600' }}>
-                          Infrastructure & Operations (15%)
-                        </h5>
-                        <p style={{ margin: 0, color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
-                          Maintaining robust cloud infrastructure, backend services, website hosting, 
-                          and computational resources required for AI model training and deployment.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <h4 style={{ marginBottom: '1.5rem', color: '#1d1d1f', fontSize: '20px', fontWeight: '600' }}>Our Mission</h4>
+                  <p style={{ margin: '0 0 1rem 0', color: '#333', fontSize: '16px', lineHeight: '1.6' }}>
+                    As a musician, I've seen firsthand how expensive professional music tools can be. Many talented 
+                    artists simply can't afford the software and technology that could elevate their music. 
+                  </p>
+                  <p style={{ margin: '0', color: '#333', fontSize: '16px', lineHeight: '1.6' }}>
+                    Your donations help fund the development of AI-powered music technology that breaks down these barriers, 
+                    creating tools that are powerful, accessible, and free for musicians worldwide.
+                  </p>
                 </div>
 
-                {/* Strategic Outcomes */}
+                {/* What We're Building */}
                 <div style={{ 
                   backgroundColor: '#fff9e6', 
                   padding: '1.5rem', 
                   borderRadius: '8px', 
                   marginBottom: '2rem' 
                 }}>
-                  <h4 style={{ marginBottom: '1rem', color: '#1d1d1f', fontSize: '18px', fontWeight: '600' }}>Strategic Outcomes:</h4>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
-                    <li style={{ display: 'flex', alignItems: 'center', fontSize: '14px' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px', color: '#f59e0b' }}>
+                  <h4 style={{ marginBottom: '1rem', color: '#1d1d1f', fontSize: '18px', fontWeight: '600' }}>What We're Building:</h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.75rem' }}>
+                    <li style={{ display: 'flex', alignItems: 'flex-start', fontSize: '15px' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '12px', marginTop: '2px', color: '#f59e0b', flexShrink: 0 }}>
                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      Accelerate breakthrough innovations in AI-powered music separation technology
+                      <span>AI tools for voice and instrument separation that rival expensive commercial software</span>
                     </li>
-                    <li style={{ display: 'flex', alignItems: 'center', fontSize: '14px' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px', color: '#f59e0b' }}>
+                    <li style={{ display: 'flex', alignItems: 'flex-start', fontSize: '15px' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '12px', marginTop: '2px', color: '#f59e0b', flexShrink: 0 }}>
                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      Expand accessibility of professional-grade music tools to independent artists
+                      <span>Music education platforms that adapt to different learning styles and skill levels</span>
                     </li>
-                    <li style={{ display: 'flex', alignItems: 'center', fontSize: '14px' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px', color: '#f59e0b' }}>
+                    <li style={{ display: 'flex', alignItems: 'flex-start', fontSize: '15px' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '12px', marginTop: '2px', color: '#f59e0b', flexShrink: 0 }}>
                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      Foster open-source development and knowledge sharing in AI music research
+                      <span>Creative composition aids that help musicians explore new ideas and arrangements</span>
                     </li>
-                    <li style={{ display: 'flex', alignItems: 'center', fontSize: '14px' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px', color: '#f59e0b' }}>
+                    <li style={{ display: 'flex', alignItems: 'flex-start', fontSize: '15px' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '12px', marginTop: '2px', color: '#f59e0b', flexShrink: 0 }}>
                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      Establish sustainable infrastructure for long-term innovation and community impact
+                      <span>Performance analysis tools that provide personalized feedback for improvement</span>
                     </li>
                   </ul>
+                </div>
+
+                {/* Impact */}
+                <div style={{ 
+                  backgroundColor: '#f0f8ff', 
+                  padding: '1.5rem', 
+                  borderRadius: '8px', 
+                  marginBottom: '2rem' 
+                }}>
+                  <h4 style={{ marginBottom: '1rem', color: '#1d1d1f', fontSize: '18px', fontWeight: '600' }}>The Vision</h4>
+                  <p style={{ margin: '0', color: '#333', fontSize: '15px', lineHeight: '1.6' }}>
+                    Imagine a world where a talented musician in any part of the globe can access the same 
+                    high-quality AI music tools as someone in a major recording studio. Where students can 
+                    learn with personalized AI tutors, and where creativity isn't limited by what you can afford. 
+                    That's the future we're building together.
+                  </p>
                 </div>
 
                 {/* Donation Button */}
@@ -184,7 +124,7 @@ const Donate: React.FC = () => {
                     <path d="M20.84 4.61A5.5 5.5 0 0 0 16.5 2.5H7.5A5.5 5.5 0 0 0 2 8V16A5.5 5.5 0 0 0 7.5 21.5H16.5A5.5 5.5 0 0 0 22 16V8A5.41 5.41 0 0 0 20.84 4.61Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  Invest in Innovation
+                  Donate Now
                 </button>
 
                 {/* Security Notice */}
@@ -201,7 +141,7 @@ const Donate: React.FC = () => {
                     <path d="M12 22C17.5 22 22 17.5 22 12S17.5 2 12 2 2 6.5 2 12 6.5 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
                     <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  Enterprise-grade security powered by Stripe. Your payment information is protected with bank-level encryption.
+                  Secure payments processed through Stripe. Your information is always protected.
                 </div>
 
                 {/* Additional Information */}
@@ -213,7 +153,9 @@ const Donate: React.FC = () => {
                   fontSize: '14px',
                   color: '#666'
                 }}>
-                  <strong>Investment Process:</strong> Clicking "Invest in Innovation" will securely redirect you to our Stripe payment portal where you can select your contribution amount and complete the transaction with confidence.
+                  <strong>How it works:</strong> Your donation goes directly toward funding development, research, 
+                  and maintaining these tools as free resources for the global music community. Every contribution, 
+                  no matter the size, helps us get closer to universal access to AI music technology.
                 </div>
               </div>
             </div>
@@ -222,18 +164,18 @@ const Donate: React.FC = () => {
       </section>
 
       {/* Thank You Section */}
-      <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+      <section style={{ backgroundColor: '#f8f9fa', padding: '40px 0' }}>
         <div className="container text-center">
-          <h2 style={{ marginBottom: '1rem', fontSize: '32px', fontWeight: '600' }}>Empowering Innovation Through Partnership</h2>
+          <h2 style={{ marginBottom: '1rem', fontSize: '32px', fontWeight: '600' }}>Music Knows No Boundaries</h2>
           <p style={{ maxWidth: '700px', margin: '0 auto', color: '#666', fontSize: '18px', lineHeight: '1.6' }}>
-            Your investment represents more than financial support—it's a partnership in shaping the future of music technology. 
-            Together, we're building tools that will empower musicians, enhance creativity, and make professional-grade 
-            AI music technology accessible to artists worldwide. Every contribution accelerates our mission to democratize 
-            music creation through artificial intelligence.
+            As musicians, we understand that creativity and talent exist everywhere, but opportunity does not. 
+            Your support helps level the playing field, giving artists around the world access to tools that 
+            were once only available to those with significant resources. Together, we're building a more 
+            equitable future for music creation and education.
           </p>
           <div style={{ marginTop: '2rem' }}>
             <p style={{ color: '#007aff', fontSize: '16px', fontWeight: '500' }}>
-              Thank you for believing in the transformative power of AI music technology.
+              Thank you for supporting accessible music technology for all.
             </p>
           </div>
         </div>

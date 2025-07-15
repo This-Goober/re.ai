@@ -93,16 +93,41 @@ const InteractiveGuide: React.FC = () => {
       font-family: 'Inter', sans-serif;
       background-color: #F8F9FA;
       color: #343A40;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 1.5rem 0;
+      border-radius: 8px;
+      padding: 0.5rem;
+      margin: 0.75rem 0;
+    }
+    @media (min-width: 480px) {
+      .guide-container {
+        padding: 0.75rem;
+        margin: 1rem 0;
+      }
+    }
+    @media (min-width: 768px) {
+      .guide-container {
+        padding: 1rem;
+      }
     }
     .guide-tab {
       cursor: pointer;
-      padding: 0.75rem 1.5rem;
-      border-bottom: 3px solid transparent;
+      padding: 0.375rem 0.5rem;
+      border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
       font-weight: 500;
+      font-size: 12px;
+      text-align: center;
+    }
+    @media (min-width: 480px) {
+      .guide-tab {
+        padding: 0.5rem 0.75rem;
+        font-size: 13px;
+      }
+    }
+    @media (min-width: 768px) {
+      .guide-tab {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+      }
     }
     .guide-tab.active {
       color: #4A90E2;
@@ -113,23 +138,35 @@ const InteractiveGuide: React.FC = () => {
     }
     .guide-card {
       background-color: white;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
-      padding: 1.5rem;
-      margin: 1rem 0;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+    }
+    @media (min-width: 480px) {
+      .guide-card {
+        padding: 0.75rem;
+        margin: 0.75rem 0;
+      }
+    }
+    @media (min-width: 768px) {
+      .guide-card {
+        padding: 1rem;
+      }
     }
     .guide-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     }
     .guide-btn {
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.375rem;
       font-weight: 600;
       transition: all 0.3s ease;
       border: none;
       cursor: pointer;
+      font-size: 13px;
     }
     .guide-btn-primary { 
       background-color: #4A90E2; 
@@ -150,15 +187,23 @@ const InteractiveGuide: React.FC = () => {
       cursor: not-allowed;
     }
     .step-indicator {
-      width: 2.5rem; 
-      height: 2.5rem; 
+      width: 1.75rem; 
+      height: 1.75rem; 
       border-radius: 50%;
       display: flex; 
       align-items: center; 
       justify-content: center;
       font-weight: 700; 
-      font-size: 1.125rem;
+      font-size: 0.75rem;
       transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    @media (min-width: 768px) {
+      .step-indicator {
+        width: 2rem; 
+        height: 2rem; 
+        font-size: 0.875rem;
+      }
     }
     .step-indicator.active { 
       background-color: #4A90E2; 
@@ -168,12 +213,77 @@ const InteractiveGuide: React.FC = () => {
       background-color: #E9ECEF; 
       color: #6C757D; 
     }
+    .step-indicator.inactive:hover { 
+      background-color: #DEE2E6; 
+      color: #495057; 
+    }
     .chart-container { 
       position: relative; 
       width: 100%; 
       max-width: 600px; 
       margin: 0 auto; 
-      height: 350px; 
+      height: 250px; 
+    }
+    @media (min-width: 768px) {
+      .chart-container {
+        height: 350px;
+      }
+    }
+    .step-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    @media (min-width: 480px) {
+      .step-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+    }
+    .step-indicators {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    @media (min-width: 480px) {
+      .step-indicators {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+      text-align: center;
+    }
+    .step-content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .step-content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        align-items: center;
+      }
+    }
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .guide-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+      }
     }
   `;
 
@@ -181,17 +291,17 @@ const InteractiveGuide: React.FC = () => {
     <div>
       <style>{guideStyles}</style>
       <div className="guide-container">
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <h3 style={{ fontSize: '2rem', fontWeight: '700', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>
             The Un-baked Cake
           </h3>
-          <p style={{ color: '#6b7280', fontSize: '1.125rem' }}>
+          <p style={{ color: '#6b7280', fontSize: '1rem' }}>
             An Interactive Exploration of AI Voice Separation Technology
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px solid #e5e7eb', marginBottom: '2rem', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', borderBottom: '1px solid #e5e7eb', marginBottom: '1rem', flexWrap: 'wrap' }}>
           {[
             { id: 'how-it-works', label: 'How It Works' },
             { id: 'then-now', label: 'Then & Now' },
@@ -211,62 +321,65 @@ const InteractiveGuide: React.FC = () => {
         {/* How It Works Tab */}
         {activeTab === 'how-it-works' && (
           <div>
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <h4 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', marginBottom: '0.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#1f2937', marginBottom: '0.25rem' }}>
                 From Sound Wave to Separated Stem
               </h4>
-              <p style={{ color: '#6b7280' }}>
+              <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                 AI doesn't "un-mix" a song; it intelligently reconstructs it. Follow the steps below to see how a computer learns to listen.
               </p>
             </div>
             
             <div className="guide-card">
               {/* Step Indicators */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <div className="step-indicators" style={{ marginBottom: '1rem' }}>
                 {[1, 2, 3].map((step, index) => (
-                  <React.Fragment key={step}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <div className={`step-indicator ${currentStep === step ? 'active' : 'inactive'}`}>
-                        {step}
-                      </div>
-                      <span style={{ fontWeight: '600' }}>
-                        {step === 1 ? 'See Sound' : step === 2 ? 'Train AI' : 'Apply Mask'}
-                      </span>
+                  <div key={step} className="step-item" style={{ gap: '0.25rem' }}>
+                    <div 
+                      className={`step-indicator ${currentStep === step ? 'active' : 'inactive'}`}
+                      onClick={() => setCurrentStep(step)}
+                      title={`Go to step ${step}`}
+                    >
+                      {step}
                     </div>
-                    {index < 2 && <span style={{ color: '#d1d5db', fontSize: '1.5rem', display: 'none' }}>→</span>}
-                  </React.Fragment>
+                    <span style={{ fontWeight: '600', fontSize: '12px', textAlign: 'center', lineHeight: '1.2', width: '100%' }}>
+                      {step === 1 ? 'See Sound' : step === 2 ? 'Train AI' : 'Apply Mask'}
+                    </span>
+                  </div>
                 ))}
               </div>
 
               {/* Step Content */}
               {currentStep === 1 && (
                 <div>
-                  <h5 style={{ fontSize: '1.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem' }}>
+                  <h5 style={{ fontSize: '1rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.5rem' }}>
                     Step 1: Convert Sound into a Picture (Spectrogram)
                   </h5>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
+                  <div className="step-content-grid">
                     <div>
-                      <p style={{ marginBottom: '1rem' }}>
+                      <p style={{ marginBottom: '0.5rem', fontSize: '13px' }}>
                         A computer doesn't "hear" music. It converts the audio into a visual format called a <strong>spectrogram</strong>. This is like a heat map of the song:
                       </p>
-                      <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+                      <ul style={{ listStyle: 'disc', paddingLeft: '1rem', marginBottom: '0.5rem', fontSize: '13px' }}>
                         <li><strong>Time</strong> flows from left to right.</li>
                         <li><strong>Frequency (Pitch)</strong> goes from low to high.</li>
                         <li><strong>Color/Brightness</strong> shows the volume.</li>
                       </ul>
-                      <p>
+                      <p style={{ fontSize: '13px' }}>
                         Every instrument—vocals, drums, bass—creates a unique visual "fingerprint" on this map. The problem now becomes one of image analysis.
                       </p>
                     </div>
                     <div style={{ 
-                      height: '200px', 
-                      borderRadius: '0.5rem', 
+                      height: '100px', 
+                      borderRadius: '0.375rem', 
                       background: 'linear-gradient(to top, #bfdbfe, #c4b5fd, #fed7aa)', 
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center', 
-                      fontWeight: '700', 
-                      color: '#4b5563' 
+                      fontWeight: '600', 
+                      color: '#4b5563',
+                      fontSize: '11px',
+                      textAlign: 'center'
                     }}>
                       Spectrogram Visualization
                     </div>
@@ -276,38 +389,39 @@ const InteractiveGuide: React.FC = () => {
 
               {currentStep === 2 && (
                 <div>
-                  <h5 style={{ fontSize: '1.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem' }}>
+                  <h5 style={{ fontSize: '1rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.5rem' }}>
                     Step 2: Train the AI with Labeled Data
                   </h5>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
+                  <div className="step-content-grid">
                     <div>
-                      <p style={{ marginBottom: '1rem' }}>
+                      <p style={{ marginBottom: '0.5rem', fontSize: '13px' }}>
                         The AI is trained on a huge library of songs where the vocals, drums, etc., are already separate (the "answer key"). It learns by:
                       </p>
-                      <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+                      <ul style={{ listStyle: 'disc', paddingLeft: '1rem', marginBottom: '0.5rem', fontSize: '13px' }}>
                         <li>Analyzing the mixed song's spectrogram.</li>
                         <li>Making a guess about which parts are vocals.</li>
                         <li>Comparing its guess to the real vocal track.</li>
                         <li>Adjusting its internal logic to improve accuracy.</li>
                       </ul>
-                      <p>
+                      <p style={{ fontSize: '13px' }}>
                         This is repeated millions of times, until the AI becomes an expert at recognizing the visual patterns of any sound.
                       </p>
                     </div>
                     <div style={{ 
-                      height: '200px', 
-                      borderRadius: '0.5rem', 
+                      height: '100px', 
+                      borderRadius: '0.375rem', 
                       backgroundColor: '#f3f4f6',
                       display: 'flex', 
                       flexDirection: 'column',
                       alignItems: 'center', 
                       justifyContent: 'center', 
                       color: '#4b5563',
-                      padding: '1rem'
+                      padding: '0.5rem',
+                      textAlign: 'center'
                     }}>
-                      <div style={{ fontWeight: '700', fontSize: '1.125rem', marginBottom: '0.5rem' }}>Neural Network (U-Net)</div>
-                      <div style={{ fontSize: '0.875rem' }}>Encoder → Bottleneck → Decoder</div>
-                      <div style={{ fontSize: '0.75rem', marginTop: '0.5rem' }}>(With Skip Connections)</div>
+                      <div style={{ fontWeight: '600', fontSize: '12px', marginBottom: '0.25rem' }}>Neural Network (U-Net)</div>
+                      <div style={{ fontSize: '11px' }}>Encoder → Bottleneck → Decoder</div>
+                      <div style={{ fontSize: '10px', marginTop: '0.25rem' }}>(With Skip Connections)</div>
                     </div>
                   </div>
                 </div>
@@ -315,48 +429,50 @@ const InteractiveGuide: React.FC = () => {
 
               {currentStep === 3 && (
                 <div>
-                  <h5 style={{ fontSize: '1.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem' }}>
+                  <h5 style={{ fontSize: '1rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.5rem' }}>
                     Step 3: Generate and Apply a "Mask"
                   </h5>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
+                  <div className="step-content-grid">
                     <div>
-                      <p style={{ marginBottom: '1rem' }}>
+                      <p style={{ marginBottom: '0.5rem', fontSize: '13px' }}>
                         The AI's final output isn't audio; it's a <strong>mask</strong>—a digital stencil. For vocal separation, this mask highlights every part of the spectrogram the AI has identified as a "voice."
                       </p>
-                      <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+                      <ul style={{ listStyle: 'disc', paddingLeft: '1rem', marginBottom: '0.5rem', fontSize: '13px' }}>
                         <li>The mask is laid over the original song's spectrogram.</li>
                         <li>It acts like a filter, letting only the vocal parts pass through.</li>
                         <li>The filtered visual data is converted back into an audio file.</li>
                       </ul>
-                      <p>
+                      <p style={{ fontSize: '13px' }}>
                         The result is a clean, isolated vocal track, intelligently reconstructed by the AI.
                       </p>
                     </div>
                     <div style={{ 
-                      height: '200px', 
-                      borderRadius: '0.5rem', 
+                      height: '100px', 
+                      borderRadius: '0.375rem', 
                       backgroundColor: '#f3f4f6',
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'center', 
-                      fontWeight: '700', 
+                      fontWeight: '600', 
                       color: '#4b5563',
                       position: 'relative',
-                      padding: '1rem'
+                      padding: '0.5rem'
                     }}>
                       <div style={{ 
                         position: 'absolute', 
                         inset: '0', 
                         background: 'linear-gradient(to top, #bfdbfe, #c4b5fd, #fed7aa)', 
                         opacity: '0.3',
-                        borderRadius: '0.5rem'
+                        borderRadius: '0.375rem'
                       }}></div>
                       <div style={{ 
                         position: 'relative', 
                         backgroundColor: 'white', 
-                        padding: '1rem', 
-                        borderRadius: '0.5rem', 
-                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' 
+                        padding: '0.375rem', 
+                        borderRadius: '0.375rem', 
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                        fontSize: '11px',
+                        textAlign: 'center'
                       }}>
                         Vocal Mask Applied
                       </div>
@@ -366,11 +482,12 @@ const InteractiveGuide: React.FC = () => {
               )}
 
               {/* Navigation Buttons */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem' }}>
+              <div className="step-nav" style={{ marginTop: '1rem' }}>
                 <button
                   className="guide-btn guide-btn-secondary"
                   onClick={() => setCurrentStep(prev => Math.max(1, prev - 1))}
                   disabled={currentStep === 1}
+                  style={{ minWidth: '70px' }}
                 >
                   Previous
                 </button>
@@ -378,6 +495,7 @@ const InteractiveGuide: React.FC = () => {
                   className="guide-btn guide-btn-primary"
                   onClick={() => setCurrentStep(prev => Math.min(3, prev + 1))}
                   disabled={currentStep === 3}
+                  style={{ minWidth: '70px' }}
                 >
                   Next
                 </button>
@@ -405,13 +523,13 @@ const InteractiveGuide: React.FC = () => {
                 </h5>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div>
-                    <h6 style={{ fontWeight: '600', color: '#1f2937' }}>Phase Inversion</h6>
+                    <h6 style={{ fontWeight: '600', color: '#1f2937', fontSize: '14px' }}>Phase Inversion</h6>
                     <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                       Required a perfect instrumental track (rare) to cancel out music. Often left strange, ghostly artifacts.
                     </p>
                   </div>
                   <div>
-                    <h6 style={{ fontWeight: '600', color: '#1f2937' }}>Center-Channel Extraction</h6>
+                    <h6 style={{ fontWeight: '600', color: '#1f2937', fontSize: '14px' }}>Center-Channel Extraction</h6>
                     <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                       Tried to isolate vocals mixed in the "center," but also grabbed bass, kick, and snare drums, creating a muddy mess.
                     </p>
@@ -428,13 +546,13 @@ const InteractiveGuide: React.FC = () => {
                 </h5>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div>
-                    <h6 style={{ fontWeight: '600', color: '#1f2937' }}>Learned Perception</h6>
+                    <h6 style={{ fontWeight: '600', color: '#1f2937', fontSize: '14px' }}>Learned Perception</h6>
                     <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                       AI is not bound by rules. It learns to recognize the unique sonic "fingerprint" of a voice, no matter how it's mixed.
                     </p>
                   </div>
                   <div>
-                    <h6 style={{ fontWeight: '600', color: '#1f2937' }}>Intelligent Reconstruction</h6>
+                    <h6 style={{ fontWeight: '600', color: '#1f2937', fontSize: '14px' }}>Intelligent Reconstruction</h6>
                     <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                       AI doesn't just filter; it creates a high-fidelity reconstruction of the sound based on its extensive training.
                     </p>
@@ -460,7 +578,7 @@ const InteractiveGuide: React.FC = () => {
               </p>
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+            <div className="guide-grid">
               <div className="guide-card">
                 <div className="chart-container">
                   <canvas ref={chartRef}></canvas>
@@ -468,16 +586,16 @@ const InteractiveGuide: React.FC = () => {
               </div>
               
               <div className="guide-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <h5 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937' }}>
+                <h5 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#1f2937' }}>
                   {selectedTool !== null ? toolData[selectedTool].name : 'Select a tool...'}
                 </h5>
-                <p style={{ color: '#6b7280', marginTop: '0.5rem' }}>
+                <p style={{ color: '#6b7280', marginTop: '0.5rem', fontSize: '14px' }}>
                   {selectedTool !== null ? toolData[selectedTool].useCase : 'Click on a bar in the chart to see details about each popular separation tool.'}
                 </p>
                 {selectedTool !== null && (
                   <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <p><strong style={{ color: '#374151' }}>Cost Model:</strong> {toolData[selectedTool].cost}</p>
-                    <p><strong style={{ color: '#374151' }}>Key Feature:</strong> {toolData[selectedTool].feature}</p>
+                    <p style={{ fontSize: '14px' }}><strong style={{ color: '#374151' }}>Cost Model:</strong> {toolData[selectedTool].cost}</p>
+                    <p style={{ fontSize: '14px' }}><strong style={{ color: '#374151' }}>Key Feature:</strong> {toolData[selectedTool].feature}</p>
                   </div>
                 )}
               </div>
@@ -499,21 +617,21 @@ const InteractiveGuide: React.FC = () => {
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
               <div className="guide-card">
-                <h5 style={{ fontWeight: '700', fontSize: '1.125rem', marginBottom: '0.5rem' }}>Limitation: Artifacts</h5>
+                <h5 style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '0.5rem' }}>Limitation: Artifacts</h5>
                 <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                   Faint, watery, or sizzling sounds left behind when the AI struggles to separate overlapping "fingerprints." The quality of the source audio ("Garbage In, Garbage Out") is critical.
                 </p>
               </div>
               
               <div className="guide-card">
-                <h5 style={{ fontWeight: '700', fontSize: '1.125rem', marginBottom: '0.5rem' }}>Challenge: The Cocktail Party Problem</h5>
+                <h5 style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '0.5rem' }}>Challenge: The Cocktail Party Problem</h5>
                 <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                   Isolating a single voice in a room full of people talking is the next great hurdle. This requires a level of contextual understanding that current models lack.
                 </p>
               </div>
               
               <div className="guide-card">
-                <h5 style={{ fontWeight: '700', fontSize: '1.125rem', marginBottom: '0.5rem' }}>Solution: Multimodal & LASS</h5>
+                <h5 style={{ fontWeight: '700', fontSize: '1rem', marginBottom: '0.5rem' }}>Solution: Multimodal & LASS</h5>
                 <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
                   Future AIs may use video (lip-reading) to help separate audio. Users may one day simply type commands like, "Isolate the bassline in the chorus."
                 </p>
@@ -530,7 +648,7 @@ const Research: React.FC = () => {
   return (
     <div style={{ paddingTop: '80px' }}>
       {/* Hero Section */}
-      <section style={{ padding: '40px 0 30px 0' }}>
+      <section style={{ padding: '20px 0 15px 0' }}>
         <div className="container">
           <div className="text-center mb-4">
             <h1 className="page-title">AI Music Research</h1>
@@ -543,7 +661,7 @@ const Research: React.FC = () => {
       </section>
 
       {/* Featured Research */}
-      <section style={{ padding: '20px 0 40px 0' }}>
+      <section style={{ padding: '15px 0 30px 0' }}>
         <div className="container">
           <h2 className="text-center mb-2">Featured Research</h2>
           
@@ -584,9 +702,9 @@ const Research: React.FC = () => {
                 karaoke versions of songs, and analyze musical arrangements more effectively.
               </p>
               
-              <div style={{ marginTop: '1.5rem' }}>
+              <div style={{ marginTop: '1rem' }}>
                 <h4>Key Features:</h4>
-                <ul style={{ marginLeft: '1rem', marginTop: '0.5rem' }}>
+                <ul style={{ marginLeft: '1rem', marginTop: '0.25rem' }}>
                   <li>Real-time voice separation using deep learning models</li>
                   <li>Preservation of audio quality during separation process</li>
                   <li>Support for various audio formats and sample rates</li>
@@ -594,9 +712,9 @@ const Research: React.FC = () => {
                 </ul>
               </div>
               
-              <div style={{ marginTop: '1.5rem' }}>
+              <div style={{ marginTop: '1rem' }}>
                 <h4>Applications:</h4>
-                <ul style={{ marginLeft: '1rem', marginTop: '0.5rem' }}>
+                <ul style={{ marginLeft: '1rem', marginTop: '0.25rem' }}>
                   <li>Practice tool for singers and vocalists</li>
                   <li>Music education and analysis</li>
                   <li>Content creation for covers and remixes</li>
@@ -604,9 +722,9 @@ const Research: React.FC = () => {
                 </ul>
               </div>
               
-              <div style={{ marginTop: '1.5rem' }}>
-                <h4 style={{ color: '#1d1d1f', marginBottom: '0.5rem' }}>Research Paper:</h4>
-                <p style={{ marginBottom: '1rem', color: '#333' }}>
+              <div style={{ marginTop: '1rem' }}>
+                <h4 style={{ color: '#1d1d1f', marginBottom: '0.25rem' }}>Research Paper:</h4>
+                <p style={{ marginBottom: '0.5rem', color: '#333' }}>
                   Read our detailed technical paper explaining the U-Net architecture for voice separation.
                 </p>
                 <a 
@@ -624,9 +742,9 @@ const Research: React.FC = () => {
                 <span style={{ color: '#666', fontSize: '14px', marginLeft: '8px' }}>(paper)</span>
               </div>
               
-              <div style={{ marginTop: '1.5rem' }}>
-                <h4 style={{ color: '#1d1d1f', marginBottom: '0.5rem' }}>Research Podcast:</h4>
-                <p style={{ marginBottom: '1rem', color: '#333' }}>
+              <div style={{ marginTop: '1rem' }}>
+                <h4 style={{ color: '#1d1d1f', marginBottom: '0.25rem' }}>Research Podcast:</h4>
+                <p style={{ marginBottom: '0.5rem', color: '#333' }}>
                   Listen to our in-depth discussion about AI voice separation technology and its applications.
                 </p>
                 <a 
@@ -653,9 +771,41 @@ const Research: React.FC = () => {
               {/* Embedded Interactive Guide */}
               <InteractiveGuide />
               
-              <div style={{ marginTop: '1.5rem' }}>
-                <h4 style={{ color: '#1d1d1f', marginBottom: '0.5rem' }}>Try the Prototype:</h4>
-                <p style={{ marginBottom: '1rem', color: '#333' }}>
+              <div style={{ marginTop: '1rem' }}>
+                <h4 style={{ color: '#1d1d1f', marginBottom: '0.25rem' }}>Development Approach:</h4>
+                <p style={{ marginBottom: '0.5rem', color: '#333' }}>
+                  As a violinist, not a programmer, I rely on AI coding assistants like Cursor.ai to bring these ideas to life.
+                </p>
+                <div style={{ 
+                  backgroundColor: '#f8f9fa', 
+                  padding: '1rem', 
+                  borderRadius: '6px', 
+                  marginBottom: '1rem' 
+                }}>
+                  <div style={{ marginBottom: '1rem' }}>
+                    <h5 style={{ margin: '0 0 0.5rem 0', color: '#1d1d1f', fontSize: '15px', fontWeight: '600' }}>
+                      AI-Powered Development
+                    </h5>
+                    <p style={{ margin: 0, color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
+                      Tools like Cursor.ai allow musicians and artists to build complex software without extensive programming knowledge. 
+                      I describe what I want to build in natural language, and the AI helps translate that into working code.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style={{ margin: '0 0 0.5rem 0', color: '#1d1d1f', fontSize: '15px', fontWeight: '600' }}>
+                      Democratizing Technology Creation
+                    </h5>
+                    <p style={{ margin: 0, color: '#666', fontSize: '14px', lineHeight: '1.4' }}>
+                      This represents a shift where domain expertise (understanding music and musician needs) becomes 
+                      more valuable than technical programming skills. Musicians can now build the tools they envision.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div style={{ marginTop: '1rem' }}>
+                <h4 style={{ color: '#1d1d1f', marginBottom: '0.25rem' }}>Try the Prototype:</h4>
+                <p style={{ marginBottom: '0.5rem', color: '#333' }}>
                   Experience our voice separation technology in action with our interactive prototype.
                 </p>
                 <div style={{ 
@@ -711,7 +861,7 @@ const Research: React.FC = () => {
                       <path d="M20.84 4.61A5.5 5.5 0 0 0 16.5 2.5H7.5A5.5 5.5 0 0 0 2 8V16A5.5 5.5 0 0 0 7.5 21.5H16.5A5.5 5.5 0 0 0 22 16V8A5.41 5.41 0 0 0 20.84 4.61Z" fill="none"/>
                       <path d="M12 8V16M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
-                    Support This Research
+                    Support by Donating
                   </a>
                 </div>
                 <p style={{ marginTop: '1rem', fontSize: '14px', color: '#666' }}>
@@ -724,9 +874,9 @@ const Research: React.FC = () => {
       </section>
 
       {/* Research Areas */}
-      <section style={{ backgroundColor: '#f8f9fa', padding: '40px 0' }}>
+      <section style={{ backgroundColor: '#f8f9fa', padding: '25px 0' }}>
         <div className="container">
-          <h2 className="text-center" style={{ fontSize: '36px', fontWeight: 700, letterSpacing: '-0.01em', marginBottom: '32px' }}>Research Areas</h2>
+          <h2 className="text-center" style={{ fontSize: '36px', fontWeight: 700, letterSpacing: '-0.01em', marginBottom: '20px' }}>Research Areas</h2>
           
           <div className="card-container">
             <div className="card">
@@ -840,9 +990,9 @@ const Research: React.FC = () => {
       </section>
 
       {/* Technical Approach */}
-      <section style={{ padding: '40px 0' }}>
+      <section style={{ padding: '25px 0' }}>
         <div className="container">
-          <h2 className="text-center" style={{ marginBottom: '32px' }}>Technical Approach</h2>
+          <h2 className="text-center" style={{ marginBottom: '20px' }}>Technical Approach</h2>
           
           <div className="card-grid">
             <div className="card">
@@ -939,10 +1089,10 @@ const Research: React.FC = () => {
       </section>
 
       {/* Future Directions */}
-      <section style={{ backgroundColor: '#1a1a1a', color: 'white', padding: '50px 0' }}>
+      <section style={{ backgroundColor: '#1a1a1a', color: 'white', padding: '30px 0' }}>
         <div className="container text-center">
-          <h2 style={{ color: 'white', fontSize: '36px', fontWeight: 700, letterSpacing: '-0.01em', marginBottom: '16px' }}>Future Directions</h2>
-          <p style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto 40px auto', fontSize: '24px', fontWeight: 400 }}>
+          <h2 style={{ color: 'white', fontSize: '36px', fontWeight: 700, letterSpacing: '-0.01em', marginBottom: '12px' }}>Future Directions</h2>
+          <p style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto 25px auto', fontSize: '24px', fontWeight: 400 }}>
             My research is continuously evolving, driven by new discoveries in AI and the ever-changing needs 
             of the music community. Future work will focus on real-time applications, collaborative AI systems, 
             and expanding accessibility to underserved communities.
