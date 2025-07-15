@@ -8,6 +8,7 @@ import Research from './components/Research';
 import Learning from './components/Learning';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Donate from './components/Donate';
 import './App.css';
 import './styles/apple-inspired.css';
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
             <Route path="/learning" element={<Learning />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/donate" element={<Donate />} />
           </Routes>
           
           {/* Footer */}

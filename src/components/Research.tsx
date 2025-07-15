@@ -77,6 +77,54 @@ const Research: React.FC = () => {
                   <li>Audio restoration and enhancement</li>
                 </ul>
               </div>
+              
+              <div style={{ marginTop: '1.5rem' }}>
+                <h4 style={{ color: '#1d1d1f', marginBottom: '0.5rem' }}>Try the Prototype:</h4>
+                <p style={{ marginBottom: '1rem', color: '#333' }}>
+                  Experience our voice separation technology in action with our interactive prototype.
+                </p>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', justifyContent: 'flex-start' }}>
+                  <a 
+                    href="https://voice-splitter-755776231771.us-central1.run.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                    style={{ 
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0'
+                    }}
+                  >
+                    Launch Voice Separation Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginLeft: '8px', display: 'inline-block' }}>
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                  <a 
+                    href="/donate"
+                    className="btn btn-secondary"
+                    style={{ 
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0'
+                    }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px', display: 'inline-block' }}>
+                      <path d="M20.84 4.61A5.5 5.5 0 0 0 16.5 2.5H7.5A5.5 5.5 0 0 0 2 8V16A5.5 5.5 0 0 0 7.5 21.5H16.5A5.5 5.5 0 0 0 22 16V8A5.41 5.41 0 0 0 20.84 4.61Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M20.84 4.61A5.5 5.5 0 0 0 16.5 2.5H7.5A5.5 5.5 0 0 0 2 8V16A5.5 5.5 0 0 0 7.5 21.5H16.5A5.5 5.5 0 0 0 22 16V8A5.41 5.41 0 0 0 20.84 4.61Z" fill="none"/>
+                      <path d="M12 8V16M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                    Support This Research
+                  </a>
+                </div>
+                <p style={{ marginTop: '1rem', fontSize: '14px', color: '#666' }}>
+                  Help fund continued development of AI music separation technology
+                </p>
+              </div>
             </div>
           </div>
         </div>
