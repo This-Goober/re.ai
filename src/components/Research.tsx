@@ -816,9 +816,7 @@ const Research: React.FC = () => {
                   flexWrap: 'wrap'
                 }}>
                   <a 
-                    href="https://voice-splitter-755776231771.us-central1.run.app/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    href="/voice-splitter"
                     className="btn btn-primary"
                     style={{ 
                       textDecoration: 'none',
